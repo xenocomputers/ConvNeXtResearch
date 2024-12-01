@@ -12,9 +12,8 @@ import random
 def main():
     # Define paths to directories we need to create
     sampleDir = Path('sampleClasses')
-    sampleTrainPath= Path('sampleClasses/sampleTrain')
-    sampleValPath= Path('sampleClasses/sampleVal')
-
+    sampleTrainPath= Path('sampleClasses/train')
+    sampleValPath= Path('sampleClasses/val')
     # Check to delete the contents of the previous randomly selected directories if they exist to ensure a fixed number of classes are there
     if sampleDir.exists() is False:
         sampleDir.mkdir()
@@ -43,7 +42,7 @@ def main():
             selectedIndices.append(i)
             # break
     
-    # Main loop
+    # Main Loop
     for _ in range(100):
         idx = random.randint(0, maxVal)
         # Keep looping if needed until we get an index value we have not already encountered
